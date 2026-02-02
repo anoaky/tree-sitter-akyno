@@ -1,10 +1,10 @@
-"let" @keyword
-"if" @keyword
-"else" @keyword
-"while" @keyword
-"return" @keyword
-"continue" @keyword
-"break" @keyword
+"let" @keyword.storage.type
+"if" @keyword.control.conditional
+"else" @keyword.control.conditional
+"while" @keyword.control.repeat
+"return" @keyword.control.return
+"continue" @keyword.control
+"break" @keyword.control
 
 (comment) @comment
 

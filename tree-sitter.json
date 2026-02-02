@@ -6,12 +6,15 @@
       "camelcase": "Akyno",
       "title": "Akyno",
       "scope": "source.akyno",
+      "path": ".",
       "file-types": [
         "akn"
       ],
       "injection-regex": "^akyno$",
       "class-name": "TreeSitterAkyno",
-      "highlights": "queries/highlights.scm"
+      "highlights": [
+        "queries/highlights.scm"
+      ]
     }
   ],
   "metadata": {
