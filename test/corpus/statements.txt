@@ -1,0 +1,143 @@
+===========
+Empty block
+===========
+
+main(): void {}
+
+---
+
+(source_file
+  (fn_defn
+    (ident)
+    (base_type)
+    (block)))
+
+====
+If statement empty no else
+====
+
+main(): void {
+  if (x) {}
+}
+
+---
+
+(source_file
+  (fn_defn
+    (ident)
+    (base_type)
+    (block
+      (if
+        (ident)
+        (block)))))
+
+====
+If statement empty with else
+====
+
+main(): void {
+  if (x) {
+    
+  } else {
+    
+  }
+}
+
+---
+
+(source_file
+  (fn_defn
+    (ident)
+    (base_type)
+    (block
+      (if
+        (ident)
+        (block)
+        (block)))))
+
+====
+Else if empty
+====
+
+main(): void {
+  if (x) {
+    
+  } else if (y) {
+    
+  } else {
+    
+  }
+}
+
+---
+
+(source_file
+  (fn_defn
+    (ident)
+    (base_type)
+    (block
+      (if
+        (ident)
+        (block)
+        (if
+          (ident)
+          (block)
+          (block))))))
+
+====
+Full local var
+====
+
+main(): void {
+  let x: int = 3;
+}
+
+---
+
+(source_file
+  (fn_defn
+    (ident)
+    (base_type)
+    (block
+      (local_var
+        (ident)
+        (base_type)
+        (int)))))
+
+====
+Declare local var
+====
+
+main(): void {
+  let x: int;
+}
+
+---
+
+(source_file
+  (fn_defn
+    (ident)
+    (base_type)
+    (block
+      (local_var
+        (ident)
+        (base_type)))))
+
+====
+Define local var
+====
+
+main(): void {
+  let x := 3;
+}
+
+---
+
+(source_file
+  (fn_defn
+    (ident)
+    (base_type)
+    (block
+      (local_var
+        (ident)
+        (int)))))

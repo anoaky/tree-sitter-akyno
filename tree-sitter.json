@@ -5,7 +5,7 @@
       "name": "akyno",
       "camelcase": "Akyno",
       "title": "Akyno",
-      "scope": "source.akn",
+      "scope": "source.akyno",
       "file-types": [
         "akn"
       ],

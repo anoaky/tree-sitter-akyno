@@ -1,0 +1,47 @@
+==================
+Simple declaration
+==================
+
+main(): int;
+
+---
+
+(source_file
+  (fn_decl
+    (ident)
+    (base_type)))
+
+=========================
+One parameter declaration
+=========================
+
+add2(x: int): int;
+
+---
+
+(source_file
+  (fn_decl
+    (ident)
+    (fn_param
+      (ident)
+      (base_type))
+    (base_type)))
+
+=========================
+Two parameter declaration
+=========================
+
+add(x: int, y: int): int;
+
+---
+
+(source_file
+  (fn_decl
+    (ident)
+    (fn_param
+      (ident)
+      (base_type))
+    (fn_param
+      (ident)
+      (base_type))
+    (base_type)))

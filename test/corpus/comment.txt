@@ -1,0 +1,23 @@
+===================
+Single line comment
+===================
+
+// Single line comment
+
+---
+
+(source_file
+  (comment))
+
+=========================
+Simple multi line comment
+=========================
+
+/*
+  Multi-line comment
+*/
+
+---
+
+(source_file
+  (comment))

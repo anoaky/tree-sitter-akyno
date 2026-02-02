@@ -1,0 +1,38 @@
+===========================
+Single character
+===========================
+
+static x = 0;
+
+---
+
+(source_file
+  (static_var
+    (ident)
+    (int)))
+
+=============================
+Initial underscore
+=============================
+
+static _x = 0;
+
+---
+
+(source_file
+  (static_var
+    (ident)
+    (int)))
+
+=================
+Mixed underscores
+=================
+
+static var_name = 0;
+
+---
+
+(source_file
+  (static_var
+    (ident)
+    (int)))

@@ -1,0 +1,74 @@
+=========
+Base type
+=========
+
+static i: int;
+
+---
+
+(source_file
+  (static_var
+    (ident)
+    (base_type)))
+
+============
+Pointer type
+============
+
+static ptr: &int;
+
+---
+
+(source_file
+  (static_var
+    (ident)
+    (pointer_type
+      (base_type))))
+
+==========
+Array type
+==========
+
+static arr: int[5];
+
+---
+
+(source_file
+  (static_var
+    (ident)
+    (array_type
+      (base_type)
+      (int))))
+
+=================
+Array of pointers
+=================
+
+static arr_of_ptrs: (&int)[10];
+
+---
+
+(source_file
+  (static_var
+    (ident)
+    (array_type
+      (paren_type
+        (pointer_type
+          (base_type)))
+      (int))))
+
+================
+Pointer to array
+================
+
+static ptr_to_arr: &int[10];
+
+---
+
+(source_file
+  (static_var
+    (ident)
+    (pointer_type
+      (array_type
+        (base_type)
+        (int)))))
