@@ -10,7 +10,8 @@
         "akn"
       ],
       "injection-regex": "^akyno$",
-      "class-name": "TreeSitterAkyno"
+      "class-name": "TreeSitterAkyno",
+      "highlights": "queries/highlights.scm"
     }
   ],
   "metadata": {
