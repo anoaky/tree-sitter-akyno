@@ -786,7 +786,7 @@
             "name": "left",
             "content": {
               "type": "SYMBOL",
-              "name": "expression"
+              "name": "ident"
             }
           },
           {

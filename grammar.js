@@ -180,7 +180,7 @@ export default grammar({
       $.paren_expr,
     ),
     assignment: $ => prec.right(1, seq(
-      field('left', $.expression),
+      field('left', $.ident),
       '=',
       field('right', $.expression),
     )),

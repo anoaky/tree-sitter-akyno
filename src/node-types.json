@@ -215,7 +215,7 @@
         "required": true,
         "types": [
           {
-            "type": "expression",
+            "type": "ident",
             "named": true
           }
         ]
