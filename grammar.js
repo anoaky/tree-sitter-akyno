@@ -107,6 +107,7 @@ export default grammar({
       $.return,
       $.break,
       $.continue,
+      $.expression,
     ),
     block: $ => seq(
       '{',
