@@ -47,20 +47,16 @@ export default grammar({
       ':',
       field('type', $.type),
     ),
+    fn_params: $ => seq(
+      $.fn_param,
+      repeat(
+        seq(',', $.fn_param)
+      )
+    ),
     _fn_sig: $ => seq(
       field('name', $.ident),
       '(',
-      field('params', optional( 
-        seq(
-          $.fn_param,
-          repeat(
-            seq(
-              ',',
-              $.fn_param,
-            )
-          )
-        )
-      )),
+      field('params', optional($.fn_params)),
       ')',
       ':',
       field('type', $.type),
@@ -107,7 +103,7 @@ export default grammar({
       $.return,
       $.break,
       $.continue,
-      $.expression,
+      $.expr_stmt,
     ),
     block: $ => seq(
       '{',
@@ -164,6 +160,7 @@ export default grammar({
       'continue',
       ';',
     ),
+    expr_stmt: $ => seq($.expression, ';'),
     // Expressions
     expression: $ => choice(
       $.literal,
@@ -223,20 +220,12 @@ export default grammar({
       '.',
       field('field', $.ident),
     )),
+    call_args: $ => seq($.expression, repeat(seq(',', $.expression))),
     call_fn: $ => prec.right(17, seq(
       field('fn', $.ident),
       '(',
-      field('args', optional(
-        seq(
-          $.expression,
-          optional(
-            seq(
-              ',',
-              $.expression,
-            )
-          )
-        )
-      )),
+      optional(field('args',optional($.call_args))),
+      ')',
     )),
     paren_expr: $ => prec(19, seq('(', $.expression, ')')),
   }
