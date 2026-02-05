@@ -96,6 +96,10 @@
         "named": true
       },
       {
+        "type": "for",
+        "named": true
+      },
+      {
         "type": "if",
         "named": true
       },
@@ -497,6 +501,32 @@
     }
   },
   {
+    "type": "for",
+    "named": true,
+    "fields": {
+      "pattern": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "range_pattern",
+            "named": true
+          }
+        ]
+      },
+      "stmt": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "statement",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "if",
     "named": true,
     "fields": {
@@ -641,6 +671,42 @@
           "named": true
         }
       ]
+    }
+  },
+  {
+    "type": "range_pattern",
+    "named": true,
+    "fields": {
+      "end": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "ident",
+            "named": true
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "expression",
+            "named": true
+          }
+        ]
+      }
     }
   },
   {
@@ -879,6 +945,10 @@
   },
   {
     "type": "else",
+    "named": false
+  },
+  {
+    "type": "for",
     "named": false
   },
   {

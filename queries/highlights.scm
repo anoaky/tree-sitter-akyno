@@ -20,6 +20,7 @@
 "if" @keyword.control.conditional
 "else" @keyword.control.conditional
 "while" @keyword.control.repeat
+"for" @keyword.control.repeat
 "return" @keyword.control.return
 "continue" @keyword.control
 "break" @keyword.control

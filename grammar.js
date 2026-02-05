@@ -94,10 +94,21 @@ export default grammar({
       seq('struct', $.ident),
       '_',
     )),
+    // Patterns
+    range_pattern: $ => seq(
+      field('name', $.ident),
+      ':',
+      choice('[', '('),
+      field('start', $.expression),
+      ';',
+      field('end', $.expression),
+      choice(']', ')'),
+    ),
     // Statements
     statement: $ => choice(
       $.block,
       $.local_var,
+      $.for,
       $.while,
       $.if,
       $.return,
@@ -126,6 +137,13 @@ export default grammar({
         field('expr', $.expression),
         ';',
       ),
+    ),
+    for: $ => seq(
+      'for',
+      '(',
+      field('pattern', $.range_pattern),
+      ')',
+      field('stmt', $.statement),
     ),
     while: $ => seq(
       'while',
