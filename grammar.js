@@ -189,6 +189,7 @@ export default grammar({
       $.comparison,
       $.arithmetic_lower,
       $.arithmetic_higher,
+      $.typecast,
       $.unary_expression,
       $.array_access,
       $.field_access,
@@ -220,6 +221,12 @@ export default grammar({
       seq($.expression, '*', $.expression),
       seq($.expression, '/', $.expression),
       seq($.expression, '%', $.expression),
+    )),
+    typecast: $ => prec.right(15, seq(
+      '(',
+      $.type,
+      ')',
+      $.expression,
     )),
     unary_expression: $ => prec.right(15, choice(
       seq('+', $.expression),

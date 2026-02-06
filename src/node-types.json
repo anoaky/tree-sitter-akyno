@@ -52,6 +52,10 @@
         "named": true
       },
       {
+        "type": "typecast",
+        "named": true
+      },
+      {
         "type": "unary_expression",
         "named": true
       }
@@ -791,6 +795,25 @@
           }
         ]
       }
+    }
+  },
+  {
+    "type": "typecast",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "expression",
+          "named": true
+        },
+        {
+          "type": "type",
+          "named": true
+        }
+      ]
     }
   },
   {
