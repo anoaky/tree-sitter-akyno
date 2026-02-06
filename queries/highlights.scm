@@ -15,6 +15,9 @@
 
 (fn_param name: (ident) @variable.parameter)
 
+(struct_field name: (ident) @variable.other.member)
+(struct_decl name: (ident) @type)
+
 "let" @keyword.storage.type
 "static" @keyword.storage.modifier
 "if" @keyword.control.conditional
@@ -24,6 +27,7 @@
 "return" @keyword.control.return
 "continue" @keyword.control
 "break" @keyword.control
+"struct" @keyword.storage.type
 "+" @operator
 "-" @operator
 "/" @operator

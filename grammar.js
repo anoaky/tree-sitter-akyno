@@ -27,6 +27,7 @@ export default grammar({
       $.static_var,
       $.fn_decl,
       $.fn_defn,
+      $.struct_decl,
     )),
     comment: $ => token(choice(seq('//', /.*/), seq('/*', /[^*]*\*+([^/*][^*]*\*+)*/, '/'))),
     ident: $ => /([a-zA-Z][_a-zA-Z0-9]*|[_][_a-zA-Z0-9]+)/,
@@ -68,6 +69,19 @@ export default grammar({
     fn_defn: $ => seq(
       $._fn_sig,
       field('block', $.block),
+    ),
+    struct_field: $ => seq(
+      field('name', $.ident),
+      ':',
+      field('type', $.type),
+      ';'
+    ),
+    struct_decl: $ => seq(
+      'struct',
+      field('name', $.ident),
+      '{',
+      field('fields', repeat($.struct_field)),
+      '}',
     ),
     // Types
     type: $ => choice(
